@@ -1,0 +1,15 @@
+
+<div class="container p-3 bg-white rounded-pill text-center ad-box-shadow ">
+    <h1 class="text-success text-capitalize">
+        Hello {{userdata?.username?userdata?.username:"user"}}
+    </h1>
+    <p class="text-muted">Welcome to <b>AdDev tech store</b></p>
+</div>
+
+  <div class="container my-5">
+    <h1 class="text-muted border-bottom">
+        Store
+    </h1>
+
+    <app-products [prodData]="prodData"></app-products>
+  </div>

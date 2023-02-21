@@ -1,0 +1,64 @@
+
+  <div class="d-flex" style="height: 100vh;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark adsidebarForToggle" id="adsidebarForToggle" togglestatus="false" style="width: 280px;">
+      
+      <a routerLink="/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none text-center mx-auto">
+        <img src="/favicon.ico" alt="" style="width: 25px;">
+        <span class="fs-4">dmin Panel</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a routerLink="/admin" class="nav-link if pagedashboard}} active{else}}text-white {/if}}" aria-current="page">
+            <i class="bi bi-house-door px-1" style="font-size: 18px;"></i>
+            Home
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/users" class="nav-link  {#}} active{}}text-white {}}">
+            <i class="bi bi-people px-1" style="font-size: 18px;"></i>
+            Users
+          </a>
+        </li>
+        <li>
+          <a routerLink="#" class="nav-link text-white">
+            <i class="bi bi-box-seam px-1" style="font-size: 18px;"></i>
+            Products
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a routerLink="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/images/user-avatar.png" alt="" width="32" height="32" class="rounded-circle me-2"
+            style="width: 32px;">
+          <strong class="text-capitalize">admin username</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="">
+          <li><a class="dropdown-item" routerLink="/admin/users/update/">Settings</a></li>
+          <li><a class="dropdown-item" routerLink="/admin/users/update/">Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" routerLink="/logout">Sign out</a></li>
+        </ul>
+      </div>
+      <!-- <button id="closeToggle" onclick="togglesbar()" >X</button> -->
+    </div>
+    <div [style]="{'width':'100%'}">
+      <div class="bg-white ad-box-shadow p-3 mb-2 border-bottom">
+        <!-- <button id="toggleBTN" onclick="togglesbar()" >
+          toggle
+        </button> -->
+        <a routerLink="/admin">Admin</a>
+        <i class="bi bi-chevron-compact-right"></i>
+        <!-- {{#each page}} {{this}} <i class="bi bi-chevron-compact-right"></i> {{/each}} -->
+
+      </div>
+      <router-outlet ></router-outlet>
+
+    </div>
+  </div>
+  

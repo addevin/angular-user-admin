@@ -1,0 +1,20 @@
+<div class="container" style="max-width: 600px;">
+    <form (submit)="onFormSubmit()">
+        <div class="" *ngIf="status.message">
+        <div class="alert " [ngClass]="[status.err?'alert-danger':'alert-success']" >{{status.message}}</div>    
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">username</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="username" [(ngModel)]="FormData.username" placeholder="@username">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" [(ngModel)]="FormData.email" placeholder="name@email.com">
+        </div>
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Phone number</label>
+          <input type="number" class="form-control" id="phoneNumber" name="phone" [(ngModel)]="FormData.phone" placeholder="99999999999">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

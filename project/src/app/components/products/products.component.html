@@ -1,0 +1,22 @@
+<div *ngIf="prodData?.err!false">
+
+    <div class="alert alert-danger" role="alert" >
+        {{prodData.err}}
+    </div>
+</div> 
+<div class="row wrap justify-content-center" *ngIf="prodData?.products">
+        
+    <div class="card col-lg-2 m-2" *ngFor="let p of prodData.products">
+        <div class="card-img-top text-center py-2 " >
+            <img src="{{prodData.url}}{{p.image}}" class=" ad-productImage w-100" style="max-height: 200px;" alt="...">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-success"> <small>&#8377;</small> {{p.price}}</h5>
+            <p class="card-text small text-muted"><b>{{p.title}} {{p.model}}</b> - {{p.spec}}</p>
+            <button class="btn btn-primary">Add to cart</button>
+        </div>
+    </div>
+</div>
+<div class="text-center" *ngIf="!prodData">
+    <h5 class="text-secondary">Loading...</h5>
+</div> 

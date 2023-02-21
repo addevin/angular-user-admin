@@ -1,0 +1,62 @@
+GET http://localhost:3000/ HTTP/1.1
+
+###
+
+POST http://localhost:3000/auth/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"addev",
+    "username":"addev",
+    "email": "addev@gmail.coms",
+    "phone": 9745502517,
+    "password": "asdasdasd",
+    "repassword": "asdasdasd"
+}
+
+###
+GET http://localhost:3000/test HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ViYmM5MWRlZDI2NTEyYWU3YWM0MmYiLCJ1c2VybmFtZSI6IkFkX0RldiIsImlhdCI6MTY3NjM5NTExMywiZXhwIjoxNjc2Mzk4NzEzfQ.fNOHwnU07-DuDVG8YylhcrvdhhqLOUsHlj6kxUyRnmI
+
+###
+
+POST http://localhost:3000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "user":"addev",
+    "password": "asdasdasd"
+}
+
+
+###
+
+POST http://localhost:3000/auth/admin HTTP/1.1
+Content-Type: application/json
+
+{
+    "user":"admin",
+    "password":"adminadmin"
+}
+
+###
+PUT http://localhost:3000/userupdate HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2YwYWZkNGFiMmM4ZjFjYmFkOWZkYzIiLCJ1c2VybmFtZSI6ImFkZGV2IiwiaWF0IjoxNjc2NzIyMDAyLCJleHAiOjE2NzY3MjMwMDJ9.ztDfDyyRXdwm8hqsED7jStoBu85tu-6bBunt3h0UJNc
+
+{
+    "name":"irfans",
+    "username":"addev",
+    "phone": 9745025333,
+    "password": "asdasdasd",
+    "repassword": "asdasdasd",
+    "email":"myemaila@sdf.sdf"
+}
+
+
+###
+get http://localhost:3000/admin/getusers HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjc2ODAxMTEwLCJleHAiOjE2NzcyMzMxMTB9.nQhMVb1CmV_TgUM8m0gJOlEPSJzUmi-2SnuXzrUI4mQ
+

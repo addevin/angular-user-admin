@@ -1,0 +1,17 @@
+
+.dpHover .dpHoverContent{
+    cursor: pointer;
+    display: none;
+}
+.dpHover:hover .dpHoverContent{
+    display: flex;
+}
+.dpHover img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+a{
+    cursor: pointer;
+}

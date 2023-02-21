@@ -1,0 +1,60 @@
+<div class="loader" *ngIf="loader">
+  <img src="/assets/img/loader.gif" alt="">
+</div>
+
+<div class="conainer">
+    <div class="row">
+        <div class="col-12 col-md-3 text-center">
+            <div class="border container mx-auto col-12 col-md-11 pt-3">
+                <div style="width: 100px; height: 100px;" class="mx-auto rounded-pill border position-relative dpHover" >
+                    <img [src]="userData.data.userData.avatar?userData.data.url+'uploads/'+userData.data.userData.avatar:'https://cdn1.iconfinder.com/data/icons/instagram-ui-colored/48/JD-18-512.png'" class="w-100" alt="">
+                    <label for="profileImg" class="position-absolute d-block" style="top: 0;">
+                      <div class="rounded-pill bg-dark position-absolute dpHoverContent justify-content-center align-items-center text-white" style="width: 100px; height: 100px; top: 0; --bs-bg-opacity: 0.5;" >Click to upload</div>
+                    </label>
+                  </div>
+                  <input type="file" name="profile" id="profileImg" (change)="uploadProfile($event)" class="d-none">
+                <div class="text-center mt-2">
+                    <h5 class="primary">@{{userData.data.userData.username}}</h5>
+                    <p>{{userData.data.userData.email}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="border container mx-auto col-12 col-md-11 pt-3 p-3">
+              <div *ngIf="response">
+                <div class="alert " [ngClass]="[(response.status=='ok')?'alert-success':'alert-danger']" role="alert">
+                  {{response.message}}
+                </div>
+              </div>
+                <form *ngIf="userData?.data?.userData" (ngSubmit)="UpdateUser()">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="name@example.com" *ngIf="displayStat.email" [(ngModel)]="updateForm.email" >
+                      <div *ngIf="!displayStat.email">
+                        <p class=" border p-2 w-100 d-block rounded mb-0">{{userData.data.userData.email}}</p>
+                        <a (click)="showInput('email')" class="text-primary d-block">[Edit]</a>
+                      </div>
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="email" class="form-control" id="username" placeholder="@username" name="username" *ngIf="displayStat.username" [(ngModel)]="updateForm.username">
+                      <div *ngIf="!displayStat.username">
+                        <p class=" border p-2 w-100 d-block rounded mb-0">@{{userData.data.userData.username}}</p>
+                        <a (click)="showInput('username')" class="text-primary d-block">[Edit]</a>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <a (click)="showInput('password')" class="text-primary d-block" *ngIf="!displayStat.password">[Change Password]</a>
+                      <div *ngIf="displayStat.password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" [(ngModel)]="updateForm.password">
+                        <input type="password" class="form-control mt-1" id="" name="repassword" placeholder="Re Password" [(ngModel)]="updateForm.repassword">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" *ngIf="displayStat">Save</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
