@@ -28,7 +28,7 @@ console.log(file.originalname,"filename#");
   if (mimetype && extname) {
     return callback(null, true);
   } else {
-    return callback('Error: Images Only!');
+    return callback('Error: File type should be image!');
   }
 }
 
